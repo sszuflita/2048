@@ -108,8 +108,11 @@ Grid.prototype.findWorstMove = function() {
 	}
     }
 
-    console.log(worstMoves);
-    console.log(minFound);
+    if (worstMoves.length) {
+	return worstMoves[Math.floor(Math.random() * worstMoves.length)];
+    }
+
+    return this.randomAvailableCell();
 }
 
 Grid.prototype.movesAvailable = function () {
