@@ -87,7 +87,7 @@ Grid.prototype.movesAvailable = function () {
     return this.canMoveUp();
 }
 
-Grid.protoype.canMoveUp = function () {
+Grid.prototype.canMoveUp = function () {
     for (var x = 0; x < this.size; x++) {
 	for (var y = 0; y < this.size; y++) {
 	    var curr = this.cells[x][y];
