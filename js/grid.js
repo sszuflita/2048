@@ -91,6 +91,7 @@ Grid.prototype.findWorstMove = function() {
     for (var i = 0; i < candidates.length; i++) {
 	var cell = candidates[i];
 	for (var j = 0; j < values.length; j++) {
+	    var value = values[j];
 	    var move = Tile(cell, value);
 	    console.log(move);
 	}
