@@ -96,8 +96,20 @@ Grid.prototype.findWorstMove = function() {
 	    this.insertTile(move);
 	    var countMoves = this.movesAvailable();
 	    this.removeTile(move);
+	    
+	    if (minFound > countMoves) {
+		worstMoves = [move];
+		minFound = countMoves;
+	    }
+
+	    if (minFound == countMoves) {
+		worstMoves.push(move);
+	    }
 	}
     }
+
+    console.log(worstMoves);
+    console.log(minFound);
 }
 
 Grid.prototype.movesAvailable = function () {
