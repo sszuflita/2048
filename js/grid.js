@@ -83,16 +83,15 @@ Grid.prototype.withinBounds = function (position) {
          position.y >= 0 && position.y < this.size;
 };
 
-Grid.prototype.movesAvailable = function () {
-    if (this.canMoveUp() == 1)
-	console.log("up");
-    if (this.canMoveDown() == 1)
-	console.log("down");
-    if (this.canMoveLeft() == 1)
-	console.log("left");
-    if (this.canMoveRight() == 1)
-	console.log("right");
+Grid.prototype.findWorstMove = function() {
+    var candidates = this.availableCells();
+    for (var i = 0; i < candidates.length; i++) {
+	var move = candidates[i];
+	console.log(move);
+    }
+}
 
+Grid.prototype.movesAvailable = function () {
     return this.canMoveUp() + 
 	this.canMoveDown() +
 	this.canMoveLeft() +
