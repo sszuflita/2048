@@ -104,9 +104,7 @@ Grid.prototype.canMoveUp = function () {
 	for (var y = 0; y < this.size; y++) {
 	    var curr = this.cells[x][y];
 	    if (curr !== null){
-		console.log(curr);
 		var cellAbove = {x: x, y: y-1};
-		console.log(this.withinBounds(cellAbove));
 		if (this.withinBounds(cellAbove) && 
 		    this.cellAvailable(cellAbove))
 		    return 1;
@@ -124,9 +122,7 @@ Grid.prototype.canMoveDown = function () {
 	for (var y = 0; y < this.size; y++) {
 	    var curr = this.cells[x][y];
 	    if (curr !== null){
-		console.log(curr);
 		var cellAbove = {x: x, y: y+1};
-		console.log(this.withinBounds(cellAbove));
 		if (this.withinBounds(cellAbove) && 
 		    this.cellAvailable(cellAbove))
 		    return 1;
@@ -144,9 +140,7 @@ Grid.prototype.canMoveLeft = function () {
 	for (var y = 0; y < this.size; y++) {
 	    var curr = this.cells[x][y];
 	    if (curr !== null){
-		console.log(curr);
 		var cellAbove = {x: x-1, y: y};
-		console.log(this.withinBounds(cellAbove));
 		if (this.withinBounds(cellAbove) && 
 		    this.cellAvailable(cellAbove))
 		    return 1;
@@ -164,9 +158,7 @@ Grid.prototype.canMoveRight = function () {
 	for (var y = 0; y < this.size; y++) {
 	    var curr = this.cells[x][y];
 	    if (curr !== null){
-		console.log(curr);
 		var cellAbove = {x: x+1, y: y};
-		console.log(this.withinBounds(cellAbove));
 		if (this.withinBounds(cellAbove) && 
 		    this.cellAvailable(cellAbove))
 		    return 1;
