@@ -84,6 +84,26 @@ Grid.prototype.withinBounds = function (position) {
 };
 
 Grid.prototype.movesAvailable = function () {
-  var n = 0;
-  return n;
+    return this.canMoveUp();
+}
+
+Grid.protoype.canMoveUp = function () {
+    for (var x = 0; x < this.size; x++) {
+	for (var y = 0; y < this.size; y++) {
+	    var curr = this.cells[x][y];
+	    if (this.cellOccupied(curr)){
+		var cellAbove = {x: x, y: y-1};
+		if (this.withinBounds(cellAbove) && 
+		    this.cellAvailable(cellAbove))
+		    return 1;
+		if (this.withinBounds(cellAbove) && 
+		    this.cellContent(cellAbove).value == curr.value)
+		    return 1;
+	    }
+	}
+    }
+
+
+    
+    return 0;
 }
