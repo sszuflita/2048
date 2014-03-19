@@ -84,7 +84,19 @@ Grid.prototype.withinBounds = function (position) {
 };
 
 Grid.prototype.movesAvailable = function () {
-    return this.canMoveUp();
+    if (this.canMoveUp())
+	console.log("up");
+    if (this.canMoveDown())
+	console.log("down"):
+    if (this.canMoveLeft())
+	console.log("left");
+    if (this.canMoveRight())
+	console.log("right");
+
+    return this.canMoveUp() + 
+	this.canMoveDown() +
+	this.canMoveLeft() +
+	this.canMoveRight();
 }
 
 Grid.prototype.canMoveUp = function () {
