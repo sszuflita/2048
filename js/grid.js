@@ -91,8 +91,7 @@ Grid.prototype.canMoveUp = function () {
     for (var x = 0; x < this.size; x++) {
 	for (var y = 0; y < this.size; y++) {
 	    var curr = this.cells[x][y];
-	    console.log(curr);
-/*	    if (this.cellOccupied(curr)){
+	    if (! curr === null){
 		var cellAbove = {x: x, y: y-1};
 		console.log(this.withinBounds(cellAbove));
 		if (this.withinBounds(cellAbove) && 
@@ -101,7 +100,7 @@ Grid.prototype.canMoveUp = function () {
 		if (this.withinBounds(cellAbove) && 
 		    this.cellContent(cellAbove).value == curr.value)
 		    return 1;
-	    }*/
+	    }
 	}
     }
 
