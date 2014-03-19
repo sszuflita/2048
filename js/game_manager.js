@@ -153,6 +153,7 @@ GameManager.prototype.move = function (direction) {
   });
 
   if (moved) {
+    // our target
     this.addRandomTile();
 
     if (!this.movesAvailable()) {
