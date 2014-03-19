@@ -93,7 +93,9 @@ Grid.prototype.findWorstMove = function() {
 	for (var j = 0; j < values.length; j++) {
 	    var value = values[j];
 	    var move = new Tile(cell, value);
-	    console.log(move);
+	    this.insertTile(move);
+	    var countMoves = this.movesAvailable();
+	    this.removeTile(move);
 	}
     }
 }
