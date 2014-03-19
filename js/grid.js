@@ -85,9 +85,11 @@ Grid.prototype.withinBounds = function (position) {
 
 Grid.prototype.findWorstMove = function() {
     var candidates = this.availableCells();
+    var values = [2, 4];
+    var worstMoves = [];
     for (var i = 0; i < candidates.length; i++) {
-	var move = candidates[i];
-	console.log(move);
+	var cell = candidates[i];
+	
     }
 }
 
