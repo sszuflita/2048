@@ -154,7 +154,7 @@ GameManager.prototype.move = function (direction) {
 
   if (moved) {
     // our target
-    this.addRandomTile();
+    this.addRandomTile();console.log(this.grid.canMoveUp());
       console.log(this.movesAvailable());
 
     if (!this.movesAvailable()) {
