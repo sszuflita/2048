@@ -87,7 +87,7 @@ Grid.prototype.movesAvailable = function () {
     if (this.canMoveUp())
 	console.log("up");
     if (this.canMoveDown())
-	console.log("down"):
+	console.log("down");
     if (this.canMoveLeft())
 	console.log("left");
     if (this.canMoveRight())
