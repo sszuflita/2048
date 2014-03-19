@@ -104,8 +104,65 @@ Grid.prototype.canMoveUp = function () {
 	    }
 	}
     }
+    return 0;
+}
 
+Grid.prototype.canMoveDown = function () {
+    for (var x = 0; x < this.size; x++) {
+	for (var y = 0; y < this.size; y++) {
+	    var curr = this.cells[x][y];
+	    if (curr !== null){
+		console.log(curr);
+		var cellAbove = {x: x, y: y+1};
+		console.log(this.withinBounds(cellAbove));
+		if (this.withinBounds(cellAbove) && 
+		    this.cellAvailable(cellAbove))
+		    return 1;
+		if (this.withinBounds(cellAbove) && 
+		    this.cellContent(cellAbove).value == curr.value)
+		    return 1;
+	    }
+	}
+    }
+    return 0;
+}
 
-    
+Grid.prototype.canMoveLeft = function () {
+    for (var x = 0; x < this.size; x++) {
+	for (var y = 0; y < this.size; y++) {
+	    var curr = this.cells[x][y];
+	    if (curr !== null){
+		console.log(curr);
+		var cellAbove = {x: x-1, y: y};
+		console.log(this.withinBounds(cellAbove));
+		if (this.withinBounds(cellAbove) && 
+		    this.cellAvailable(cellAbove))
+		    return 1;
+		if (this.withinBounds(cellAbove) && 
+		    this.cellContent(cellAbove).value == curr.value)
+		    return 1;
+	    }
+	}
+    }
+    return 0;
+}
+
+Grid.prototype.canMoveRight = function () {
+     for (var x = 0; x < this.size; x++) {
+	for (var y = 0; y < this.size; y++) {
+	    var curr = this.cells[x][y];
+	    if (curr !== null){
+		console.log(curr);
+		var cellAbove = {x: x+1, y: y};
+		console.log(this.withinBounds(cellAbove));
+		if (this.withinBounds(cellAbove) && 
+		    this.cellAvailable(cellAbove))
+		    return 1;
+		if (this.withinBounds(cellAbove) && 
+		    this.cellContent(cellAbove).value == curr.value)
+		    return 1;
+	    }
+	}
+    }
     return 0;
 }
