@@ -155,7 +155,7 @@ GameManager.prototype.move = function (direction) {
   if (moved) {
     // our target
     this.addRandomTile();
-      console.log(this.grid.movesAvailable());
+      this.grid.findWorstMove();
 
     if (!this.movesAvailable()) {
       this.over = true; // Game over!
